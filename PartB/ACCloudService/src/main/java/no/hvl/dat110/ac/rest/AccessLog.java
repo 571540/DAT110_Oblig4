@@ -15,7 +15,7 @@ public class AccessLog {
 		cid = new AtomicInteger(0);
 	}
 
-	// TODO: add an access entry for the message and return assigned id
+	// Add an access entry for the message and return assigned id
 	public int add(String message) {
 		
 		int id = cid.getAndIncrement();
@@ -25,20 +25,20 @@ public class AccessLog {
 		return id;
 	}
 		
-	// TODO: retrieve a specific access entry 
+	// Retrieve a specific access entry 
 	public AccessEntry get(int id) {
 		
 		return log.get(id);
 		
 	}
 	
-	// TODO: clear the access entry log
+	// Clear the access entry log
 	public void clear() {
 		log.clear();
 		
 	}
 	
-	// TODO: JSON representation of the access log
+	// JSON representation of the access log
 	public String toJson () {
 		String json = new Gson().toJson(log.values().toArray());
     	
