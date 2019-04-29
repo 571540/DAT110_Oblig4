@@ -57,6 +57,10 @@ public class App {
 
 			return gson.toJson(accesslog.get(id));
 		});
+		get("accessdevice/log", (req, res) ->{
+			Gson gson = new Gson();
+			return gson.toJson(accesslog);
+		});
 		get("/accessdevice/log/:id", (req, res) -> {
 			int id = -1;
 			try {
