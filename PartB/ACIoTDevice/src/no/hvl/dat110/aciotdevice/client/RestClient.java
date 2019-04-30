@@ -92,6 +92,7 @@ public class RestClient {
 			String httpgetrequest = "GET " + codepath + " HTTP/1.1\r\n" + "Accept: application/json\r\n"
 					+ "Host: localhost\r\n" + "Connection: close\r\n" + "\r\n";
 			
+			Gson gson = new Gson();
 			OutputStream output = s.getOutputStream();
 
 			PrintWriter pw = new PrintWriter(output, false);
@@ -125,7 +126,7 @@ public class RestClient {
 
 			System.out.println("BODY:");
 			System.out.println(jsonresponse.toString());
-
+			code = gson.fromJson(jsonresponse.toString(), AccessCode.class);
 			scan.close();
 			
 		}catch(IOException e) {
