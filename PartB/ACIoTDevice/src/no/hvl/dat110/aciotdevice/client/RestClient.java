@@ -28,7 +28,7 @@ public class RestClient {
 			// construct the HTTP request
 			String jsonbody = gson.toJson(new AccessMessage(message));
 
-			String httpputrequest = 
+			String httppostrequest = 
 					"POST " + logpath + " HTTP/1.1\r\n" + 
 			        "Host: " + host + "\r\n" +
 					"Content-type: application/json\r\n" + 
@@ -42,7 +42,7 @@ public class RestClient {
 			OutputStream output = s.getOutputStream();
 
 			PrintWriter pw = new PrintWriter(output, false);
-			pw.print(httpputrequest);
+			pw.print(httppostrequest);
 			pw.flush();
 
 			// read the HTTP response
