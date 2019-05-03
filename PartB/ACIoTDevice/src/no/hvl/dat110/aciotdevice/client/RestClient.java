@@ -124,8 +124,6 @@ public class RestClient {
 
 			}
 
-			System.out.println("BODY:");
-			System.out.println(jsonresponse.toString());
 			code = gson.fromJson(jsonresponse.toString(), AccessCode.class);
 			scan.close();
 			
